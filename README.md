@@ -4,12 +4,8 @@ This application calculates the cost of delivery for a parcel based on its weigh
 
 
 - **Example Request:**
-bash
-curl -X POST \
-  http://localhost:8080/calculate-cost \
-  -H 'Content-Type: application/json' \
-  -d '
-```json  {
+### POST: http://localhost:8080/api/parcels/calculate-cost
+{
     "weight": 5.0,
     "height": 10.0,
     "width": 15.0,
@@ -17,4 +13,3 @@ curl -X POST \
     "voucherCode": "GFI"
 }
 ```
-'
