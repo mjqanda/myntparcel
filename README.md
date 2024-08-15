@@ -8,10 +8,13 @@ bash
 curl -X POST \
   http://localhost:8080/calculate-cost \
   -H 'Content-Type: application/json' \
-  -d '{
+  -d '
+```json  {
     "weight": 5.0,
     "height": 10.0,
     "width": 15.0,
     "length": 20.0,
     "voucherCode": "GFI"
-}'
+}
+```
+'
