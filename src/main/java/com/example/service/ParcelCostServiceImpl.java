@@ -64,7 +64,7 @@ public class ParcelCostServiceImpl implements ParcelCostService {
                 }
             }
         } catch (Exception e) {
-            // proceed without applying the discount
+            // proceed without applying the discount/ Error 504 handling
             e.printStackTrace();
         }
         return cost;
