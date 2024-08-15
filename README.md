@@ -3,6 +3,7 @@
 This application calculates the cost of delivery for a parcel based on its weight and volume, with additional features like applying discounts through an external Voucher API.
 
 
+
 - **Example Request Body:**
 ### POST: http://localhost:8080/api/parcels/calculate-cost
 ```json
@@ -14,7 +15,7 @@ This application calculates the cost of delivery for a parcel based on its weigh
     "voucherCode": "GFI"
 }
 ```
-- **Example Request Body:**
+- **Example Response:**
 ```json
 {
     "cost": 150.0
