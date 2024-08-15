@@ -19,9 +19,4 @@ public class ParcelController {
     public ParcelResponse calculateParcelCost(@RequestBody ParcelRequest request) {
         return parcelCostService.calculateCost(request);
     }
-
-    @PostMapping("/test")
-    public String test() {
-        return "Test";
-    }
 }
