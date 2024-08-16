@@ -3,6 +3,9 @@ package com.example.controller;
 import com.example.model.ParcelRequest;
 import com.example.model.ParcelResponse;
 import com.example.service.ParcelCostService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +19,7 @@ public class ParcelController {
     }
 
     @PostMapping("/calculate-cost")
-    public ParcelResponse calculateParcelCost(@RequestBody ParcelRequest request) {
+    public ParcelResponse calculateParcelCost(@Valid @RequestBody ParcelRequest request) {
         return parcelCostService.calculateCost(request);
     }
 }
