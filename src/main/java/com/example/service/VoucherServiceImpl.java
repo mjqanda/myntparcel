@@ -6,11 +6,13 @@ import java.time.format.DateTimeParseException;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.model.VoucherResponse;
 
+@Service
 public class VoucherServiceImpl implements VoucherService{
     
     @Value("${voucher.api.base.url}")

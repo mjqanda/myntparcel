@@ -5,6 +5,8 @@ import com.example.model.ParcelResponse;
 import com.example.model.VoucherResponse;
 import com.example.util.VolumeCalculator;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,8 +27,9 @@ public class ParcelCostServiceImpl implements ParcelCostService {
     public ParcelResponse calculateCost(ParcelRequest request) {
         double weight = request.getWeight();
         double volume = VolumeCalculator.calculateVolume(request.getHeight(), request.getWidth(), request.getLength());
-
+        String voucherCode = Optional.ofNullable(request.getVoucherCode()).orElse("");
         double cost;
+
         if (weight > 10) {
             cost = HEAVY_PARCEL_COST_MULTIPLIER * weight;
         } else if (volume < 1500) {
@@ -36,8 +39,7 @@ public class ParcelCostServiceImpl implements ParcelCostService {
         } else {
             cost = LARGE_PARCEL_COST_MULTIPLIER * volume;
         }
-
-        if (request.getVoucherCode() != null) {
+        if (!voucherCode.equals("")) {
             cost = applyVoucherDiscount(cost, request.getVoucherCode());
         }
 
